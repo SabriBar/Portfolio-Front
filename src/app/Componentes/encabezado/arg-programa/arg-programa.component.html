@@ -1,0 +1,15 @@
+<div>
+    <button type="button" (click)="modalCv.show()"> <img src="../../../../assets/cv-icon.png">
+        <br> Curriculum </button>
+</div>
+
+<app-modal id="modalCv" #modalCv class="modal-demo" [maximizable]="true" [backdrop]="false" style="z-index: 3000;">
+    <ng-container class="app-modal-header">
+      <p class="titleModal">Curriculum Vitae</p>
+    </ng-container>
+    <ng-container class="app-modal-body">
+        <embed src="../../../../assets/Docs/Curriculum Sabrina Baraldo M.pdf" frameborder="0" width="100%" height="500px">
+    </ng-container>
+    <ng-container class="app-modal-footer">
+    </ng-container>
+  </app-modal>

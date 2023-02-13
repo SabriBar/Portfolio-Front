@@ -1,0 +1,61 @@
+<div>
+  <button type="button" (click)="modalSkills.show()"> <img src="../../../../assets/mine.png">
+    <br> Skills </button>
+</div>
+
+<app-modal id="modalSkills" #modalSkills class="modal-demo" [maximizable]="true" [backdrop]="false" style="z-index: 9300;">
+  <ng-container class="app-modal-header">
+    <p class="titleModal">Skills</p>
+  </ng-container>
+  <ng-container class="app-modal-body">
+
+    <div class="flex-container">
+      <div class="game-board">
+        <br>
+        <table id="board" style="width: 420px;">
+          <tbody>
+            <tr>
+              <td class="menu" id="folder-bar" colspan="16">
+                <div id="folder1"><p>Juego</p></div>
+                <div id="folder2"><p>Ayuda</p>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="menu" colspan="16">
+                <section id="status-bar">
+                  <div id="bomb-counter">340</div>
+                  <div id="reset"><img src="../../../../assets/smileFace.png"></div>
+                  <div id="timer">127</div>
+                </section>
+              </td>
+            </tr>
+            <tr *ngFor="let Skills of skills">
+              <td class="game-cell" data-row="0" data-col="0"  style="color: rgb(0, 0, 250); font-weight: bolder;">{{Skills.skillUrl}}</td>
+              <td class="game-cell" data-row="0" data-col="1"></td>
+              <td class="game-cell" data-row="0" data-col="2"></td>
+              <td class="game-cell" data-row="0" data-col="3" ></td>
+              <td class="game-cell" data-row="0" data-col="4"></td>
+              <td class="game-cell" data-row="0" data-col="5" style="color: rgb(75, 128, 45); font-weight: bolder;">{{Skills.rangoUrl}}</td>
+              <td class="game-cell" data-row="0" data-col="6"></td>
+              <td *ngIf="isLogged">
+                <button routerLink="/editskill/{{Skills.id}}">EDITAR</button>
+              </td>
+              <td *ngIf="isLogged">
+                <button (click)="delete(Skills.id)">BORRAR</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="col-lg-2">
+      <button type="button" #newSkill class="modal-demo" [routerLink]="[{outlets: {nuevaSkill: ['nuevaSkill']}}]" [routerLinkActive]="'active'"
+        *ngIf="isLogged">
+        Agregar <br> Skill
+      </button>
+    </div>
+  </ng-container>
+</app-modal>
