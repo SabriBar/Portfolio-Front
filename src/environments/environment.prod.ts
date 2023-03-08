@@ -9,5 +9,6 @@ export const environment = {
     messagingSenderId: '476412396770',
     measurementId: 'G-TGFSJZMRXY',
   },
-  production: true
+  production: true,
+  URL: 'https://backendsabribar.onrender.com'
 };

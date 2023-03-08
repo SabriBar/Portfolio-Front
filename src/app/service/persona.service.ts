@@ -8,7 +8,7 @@ import { persona } from '../model/persona.model';
   providedIn: 'root'
 })
 export class PersonaService {
-  URL = environment.URL + 'personas/';
+  URL = environment.URL + '/personas/';
 
   constructor(private httpClient: HttpClient) { }
 

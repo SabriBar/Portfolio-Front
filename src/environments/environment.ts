@@ -14,8 +14,8 @@ export const environment = {
     measurementId: 'G-TGFSJZMRXY',
   },
  
-  production: false,
-  URL: 'http://localhost:8080/'
+  production: true,
+  URL: 'https://backendsabribar.onrender.com'
 };
 
 /*
